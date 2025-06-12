@@ -1,0 +1,8 @@
+[package]
+name = "walking_peb"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ntapi = "0.4"
+winapi = { version = "0.3.9", features = ["winnt", "minwinbase", "processthreadsapi"] }
