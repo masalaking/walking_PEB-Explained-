@@ -8,9 +8,15 @@ A diagram seems to make this concept easier to understand so I pulled this from 
 ![image](https://github.com/user-attachments/assets/68653476-549e-428e-8868-e05d26c80525)
 Photo taken from : https://red4mber.github.io/posts/hells-gate/
 
-As you can see, firstly you must access the PEB through the inline Assmebly (Ensure that you are using Windows 64-bit or you must change config)
+Here is a step by step of what to do to access the PEB and traverse it:
+- Read the PEB from inline assembly code
+- There is a data field called the PEB_LDR_DATA pointer that points to the LDR DATA
+- Then to read the modules you must access the first element of the InMemoryOrderModuleList linked list
+- It is a doubly linked list, with the FLINK being the forward pointer and the BLINK being the backward
+-Read the pointers to the DLL bases
 
-
+This can be useful, but for my purpose it is more useful to then access the desired DLL to use its functions without calling GetProcAddress, or LoadLibraryA().
+The next step is to then use the pointer to the Base address of the desired DLL to parse its PE file (Portable Exectuable File). 
 
 
 
