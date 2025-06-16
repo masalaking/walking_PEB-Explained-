@@ -34,3 +34,14 @@ Steps for Parsing the PE file:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
