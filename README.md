@@ -22,6 +22,12 @@ The next step is to then use the pointer to the Base address of the desired DLL 
 The simplified structure of the PE file that is useful to us can be seen as this 
 ![image](https://github.com/user-attachments/assets/bfb7902c-433b-4713-ba26-a9f597d8c9bf)
 
+Steps for Parsing the PE file:
+-Use the Base Address of the DLL that you wish
+-Read the DOS_Header and use the e_lfanew: Offset to the NT Headers (PE Header)
+-Read the NT Headers, which is the base address + dosHeader->e_lfanew
+-Read the Section Headers
+- Parse the Data Directories (from Optional Header) in our case the export directory.
 
 
 
