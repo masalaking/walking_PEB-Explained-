@@ -19,6 +19,12 @@ Here is a step by step of what to do to access the PEB and traverse it:
 This can be useful, but for my purpose it is more useful to then access the desired DLL to use its functions without calling GetProcAddress, or LoadLibraryA().
 The next step is to then use the pointer to the Base address of the desired DLL to parse its PE file (Portable Exectuable File). 
 
+The simplified structure of the PE file that is useful to us can be seen as this 
+![image](https://github.com/user-attachments/assets/bfb7902c-433b-4713-ba26-a9f597d8c9bf)
+
+
+
+
 
 
 
